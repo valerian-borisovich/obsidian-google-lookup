@@ -1,9 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# ###
+#
 
-PLUGIN_NAME="obsidian-google-lookup"
-PLUGIN_DIR="$OBSIDIAN_VAULT/.obsidian/plugins/$PLUGIN_NAME"
+OBSIDIAN_VAULT_DIR="/pub/==vaults==/ACE"
+OBSIDIAN_VAULT_CONF=".obsidian.pc"
+OBSIDIAN_PLUGIN_NAME="obsidian-google"
+OBSIDIAN_PLUGIN_DIR="/${OBSIDIAN_VAULT_DIR}/${OBSIDIAN_VAULT_CONF}/plugins/${OBSIDIAN_PLUGIN_NAME}"
 
-[ ! -d $PLUGIN_DIR ] && echo "directory in OBSIDIAN_VAULT is invalid" && exit 1
+[ ! -d "${OBSIDIAN_PLUGIN_DIR}" ] && echo "directory in ${OBSIDIAN_VAULT_DIR} is invalid" && exit 1
 
-echo "copying to $PLUGIN_DIR/"
-cp dist/* $PLUGIN_DIR/
+echo "copying to ${OBSIDIAN_PLUGIN_DIR}/"
+echo "${OBSIDIAN_PLUGIN_NAME}"
+cp dist/* "${OBSIDIAN_PLUGIN_DIR}/"
+
+
